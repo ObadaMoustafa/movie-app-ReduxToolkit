@@ -1,0 +1,23 @@
+header {
+  height: var(--header-h);
+  @apply bg-secondary;
+}
+
+header > div {
+  @apply container 
+  flex justify-between items-center
+  h-16;
+}
+
+.header-logo {
+  @apply text-font-primary text-3xl font-bold;
+}
+
+.user-avatar {
+  @apply h-11 
+  rounded-full overflow-hidden;
+}
+
+.user-avatar > img {
+  @apply h-full;
+}

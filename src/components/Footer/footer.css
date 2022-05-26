@@ -1,0 +1,4 @@
+footer {
+  height: var(--footer-h);
+  @apply w-full py-3 bg-secondary text-font-primary;
+}
