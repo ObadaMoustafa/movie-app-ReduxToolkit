@@ -10,8 +10,7 @@ function MovieListing() {
 
   return (
     <div className="movies-list">
-      {movies &&
-        movies.length > 0 &&
+      {movies?.length > 0 &&
         movies.map((movie, index) => <MovieCard key={index} data={movie} />)}
     </div>
   );

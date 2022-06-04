@@ -1,3 +1,5 @@
 .movies-list {
-  @apply grid grid-cols-4 gap-5;
+  @apply flex flex-col items-center justify-center gap-5
+  sm:grid  sm:grid-cols-3
+  md:grid-cols-4;
 }

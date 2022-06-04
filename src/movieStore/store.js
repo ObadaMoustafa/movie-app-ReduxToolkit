@@ -3,7 +3,7 @@ import allMoviesReducer from "./movies/movieSlice";
 
 export const store = configureStore({
   reducer: {
-    movieStore: allMoviesReducer,
+    allMovies: allMoviesReducer,
     seriosList: {},
   },
 });

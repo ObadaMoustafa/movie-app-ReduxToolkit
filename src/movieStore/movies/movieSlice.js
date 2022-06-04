@@ -22,7 +22,7 @@ export const movieSlice = createSlice({
 export const { addMovies, selectAMovie } = movieSlice.actions;
 
 // access states
-export const getAllMovies = state => state.movieStore.moviesList;
-export const getSelectedMovie = state => state.movieStore.selectedMovie;
+export const getAllMovies = state => state.allMovies.moviesList;
+export const getSelectedMovie = state => state.allMovies.selectedMovie;
 
 export default movieSlice.reducer;

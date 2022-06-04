@@ -1,5 +1,9 @@
 .movie-card {
-  @apply cursor-pointer w-full rounded-xl overflow-hidden relative;
+  @apply cursor-pointer relative overflow-hidden w-fit 
+  sm:h-56 lg:h-72 
+  rounded-xl  
+  transition-all duration-500
+  hover:scale-105;
 }
 
 .card-img {
@@ -11,7 +15,8 @@
 }
 
 .card-details {
-  @apply w-full opacity-0 p-5 absolute bottom-0 bg-secondary/70
+  @apply w-full p-5 absolute bottom-0 bg-secondary/70
+  md:opacity-0
   transition-all
   ease-in
   duration-500
