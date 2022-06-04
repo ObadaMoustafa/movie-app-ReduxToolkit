@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   moviesList: [],
-  selectedMovie: {},
+  selectedMovie: null,
 };
 
 export const movieSlice = createSlice({
@@ -15,11 +15,15 @@ export const movieSlice = createSlice({
     selectAMovie: (state, { payload }) => {
       state.selectedMovie = payload;
     },
+    deleteSelectedMovie: state => {
+      state.selectedMovie = null;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addMovies, selectAMovie } = movieSlice.actions;
+export const { addMovies, selectAMovie, deleteSelectedMovie } =
+  movieSlice.actions;
 
 // access states
 export const getAllMovies = state => state.allMovies.moviesList;
