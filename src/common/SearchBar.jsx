@@ -8,7 +8,7 @@ function SearchBar({ setValue }) {
   };
   const updateValueAfterTyping = debounce(setNewValue, 500);
   return (
-    <div className="text-black mb-3 w-full sm:w-1/2">
+    <div className="text-black mb-5 w-full sm:w-1/2">
       <input
         type="search"
         onChange={updateValueAfterTyping}
