@@ -1,0 +1,39 @@
+.movie-details {
+  @apply flex flex-col gap-5;
+}
+/* 
+.movie-details > * {
+  @apply border;
+} */
+
+.movie-details h1 {
+  @apply text-2xl font-bold text-font-secondary;
+}
+
+.movie-details h2 {
+  @apply text-lg;
+}
+
+.poster {
+  @apply w-full relative;
+}
+
+/* *rating */
+.poster > div {
+  @apply absolute top-2 right-2 w-14 px-2 
+  py-1 rounded-md
+  shadow-md
+  bg-primary text-center;
+}
+
+.poster > img {
+  @apply w-full;
+}
+
+.movie-details h3 span {
+  @apply text-2xl mr-3;
+}
+
+.movie-details h3 {
+  @apply text-xl text-justify;
+}

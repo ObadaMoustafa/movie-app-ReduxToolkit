@@ -7,7 +7,7 @@
   --footer-h: 50px;
 }
 body {
-  @apply bg-primary text-font-primary;
+  @apply bg-secondary text-font-primary;
 }
 
 .page-content {

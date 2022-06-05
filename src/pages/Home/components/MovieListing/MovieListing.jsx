@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getAllMovies } from "../../movieStore/movies/movieSlice";
+import { getAllMovies } from "../../../../movieStore/movies/movieSlice";
 import MovieCard from "../MovieCard/MovieCard";
 import "./movieListing.css";
 

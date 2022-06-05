@@ -5,7 +5,7 @@ import ErrorMsg from "../../common/Error/ErrorMsg";
 import SearchBar from "../../common/SearchBar";
 import useFetch from "../../hooks/useFetch";
 import { addMovies } from "../../movieStore/movies/movieSlice";
-import MovieListing from "../MovieListing/MovieListing";
+import MovieListing from "./components/MovieListing/MovieListing";
 import "./home.css";
 
 function Home() {

@@ -1,6 +1,6 @@
 header {
   height: var(--header-h);
-  @apply bg-secondary;
+  @apply bg-primary;
 }
 
 header > div {
