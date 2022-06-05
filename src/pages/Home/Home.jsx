@@ -14,7 +14,7 @@ function Home() {
   const apiKey = process.env.REACT_APP_APIKEY;
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const fullLink = `${baseUrl}?apikey=${apiKey}&s=${
-    searchTerm ? searchTerm : "spider"
+    searchTerm ? searchTerm : "islam"
   }`;
   const { isLoading, error, performFetch } = useFetch(fullLink);
 
