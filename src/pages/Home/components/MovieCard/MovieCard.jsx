@@ -6,7 +6,11 @@ function MovieCard({ data }) {
   //write code here
 
   return (
-    <Link to={`/movie/${data.imdbID}`} className="movie-card group">
+    <Link
+      to={`/movie/${data.imdbID}`}
+      target="_blank"
+      className="movie-card group"
+    >
       <img src={data.Poster} alt="movie poster" />
       <div className="card-details">
         <h3>{data.Title}</h3>

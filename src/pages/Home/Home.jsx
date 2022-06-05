@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import ErrorMsg from "../../common/Error/ErrorMsg";
 import SearchBar from "../../common/SearchBar";
+import Spinner from "../../common/spinner/Spinner";
 import useFetch from "../../hooks/useFetch";
 import { addMovies } from "../../movieStore/movies/movieSlice";
 import MovieListing from "./components/MovieListing/MovieListing";
@@ -26,7 +27,7 @@ function Home() {
   return (
     <div className="page-content">
       <SearchBar setValue={setSearchTerm} />
-      {isLoading && <p className="text-3xl text-font-primary">Loading ...</p>}
+      {isLoading && <Spinner />}
       {error && <ErrorMsg text={error} />}
       {!isLoading && !error && <MovieListing />}
     </div>

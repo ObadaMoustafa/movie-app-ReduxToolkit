@@ -13,7 +13,7 @@ function SearchBar({ setValue }) {
         type="search"
         onChange={updateValueAfterTyping}
         placeholder="Search Movies"
-        className="p-2 w-full rounded-lg"
+        className="py-2 px-4 w-full rounded-lg"
       />
     </div>
   );

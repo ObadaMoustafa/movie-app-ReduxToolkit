@@ -1,27 +1,39 @@
 .movie-details {
-  @apply flex flex-col gap-5;
+  @apply flex flex-col flex-wrap gap-5
+  md:grid md:grid-cols-5;
 }
+
 /* 
 .movie-details > * {
   @apply border;
 } */
 
-.movie-details h1 {
-  @apply text-2xl font-bold text-font-secondary;
+/* *movie title */
+.movie-title {
+  @apply md:col-span-5;
 }
 
-.movie-details h2 {
-  @apply text-lg;
+.movie-title h1 {
+  @apply text-2xl font-bold text-font-secondary
+  sm:text-4xl;
+}
+
+.movie-title h2 {
+  @apply text-lg
+  sm:text-2xl;
 }
 
 .poster {
-  @apply w-full relative;
+  @apply w-full relative rounded-xl overflow-hidden self-center mx-auto
+  sm:w-1/2
+  md:w-full md:self-start md:col-span-2
+  lg:w-4/5;
 }
 
 /* *rating */
 .poster > div {
   @apply absolute top-2 right-2 w-14 px-2 
-  py-1 rounded-md
+  py-1 rounded-xl
   shadow-md
   bg-primary text-center;
 }
@@ -30,10 +42,17 @@
   @apply w-full;
 }
 
+/* initial info */
+.init-info {
+  @apply flex flex-col gap-y-5
+  md:col-span-3;
+}
+/* *details title */
 .movie-details h3 span {
-  @apply text-2xl mr-3;
+  @apply text-2xl mr-3 font-bold;
 }
 
+/**details content*/
 .movie-details h3 {
-  @apply text-xl text-justify;
+  @apply text-xl;
 }

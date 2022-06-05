@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ErrorMsg from "../../common/Error/ErrorMsg";
+import Spinner from "../../common/spinner/Spinner";
 import useFetch from "../../hooks/useFetch";
 import {
   deleteSelectedMovie,
@@ -31,42 +32,47 @@ function MovieDetail() {
 
   return (
     <>
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <Spinner />}
       {error && <ErrorMsg text={error} />}
       {selectedMovie && (
         <div className="movie-details page-content">
-          <h1>{selectedMovie.Title}</h1>
-          <h2>
-            {selectedMovie.Year} - {selectedMovie.Genre}
-          </h2>
+          <div className="movie-title">
+            <h1>{selectedMovie.Title}</h1>
+            <h2>
+              {selectedMovie.Year} - {selectedMovie.Genre}
+            </h2>
+          </div>
           <div className="poster">
             <div>{selectedMovie.imdbRating}</div>
             <img src={selectedMovie.Poster} alt="Movie poster" />
           </div>
-          <h3>
-            <span>Summery: </span>
-            {selectedMovie.Plot}
-          </h3>
-          <h3>
-            <span>Type: </span>
-            {selectedMovie.Type}
-          </h3>
-          <h3>
-            <span>Duration: </span>
-            {selectedMovie.Runtime}
-          </h3>
-          <h3>
-            <span>Country: </span>
-            {selectedMovie.Country}
-          </h3>
-          <h3>
-            <span>Language: </span>
-            {selectedMovie.Language}
-          </h3>
-          <h3>
-            <span>Actors: </span>
-            {selectedMovie.Actors}
-          </h3>
+          <div className="init-info">
+            <h3>
+              <span>Summery: </span>
+              {selectedMovie.Plot}
+            </h3>
+            <h3>
+              <span>Type: </span>
+              {selectedMovie.Type}
+            </h3>
+            <h3>
+              <span>Duration: </span>
+              {selectedMovie.Runtime}
+            </h3>
+
+            <h3>
+              <span>Country: </span>
+              {selectedMovie.Country}
+            </h3>
+            <h3>
+              <span>Language: </span>
+              {selectedMovie.Language}
+            </h3>
+            <h3>
+              <span>Actors: </span>
+              {selectedMovie.Actors}
+            </h3>
+          </div>
         </div>
       )}
     </>
