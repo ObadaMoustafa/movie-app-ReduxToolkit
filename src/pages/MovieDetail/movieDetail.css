@@ -3,11 +3,6 @@
   md:grid md:grid-cols-5;
 }
 
-/* 
-.movie-details > * {
-  @apply border;
-} */
-
 /* *movie title */
 .movie-title {
   @apply md:col-span-5;

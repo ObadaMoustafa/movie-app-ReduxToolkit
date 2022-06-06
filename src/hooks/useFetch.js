@@ -20,6 +20,7 @@ const useFetch = link => {
       if (data.Response === "False") throw new Error(data.Error);
       return data;
     } catch (err) {
+      console.error(err.message);
       setError(err.message);
     } finally {
       setIsLoading(false);

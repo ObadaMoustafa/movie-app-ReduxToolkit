@@ -15,7 +15,7 @@ function MovieDetail() {
   const { imdbId } = useParams();
   const apiKey = process.env.REACT_APP_APIKEY;
   const baseUrl = process.env.REACT_APP_BASE_URL;
-  const fullLink = `${baseUrl}?apikey=${apiKey}&i=${imdbId}`;
+  const fullLink = `${baseUrl}?apikey=${apiKey}&i=${imdbId}&plot=full`;
   const selectedMovie = useSelector(getSelectedMovie);
 
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ function MovieDetail() {
     return () => dispatch(deleteSelectedMovie());
   }, []);
   useEffect(() => {
-    console.log(selectedMovie);
+    console.log("selectedMovie", selectedMovie);
   }, [selectedMovie]);
 
   return (

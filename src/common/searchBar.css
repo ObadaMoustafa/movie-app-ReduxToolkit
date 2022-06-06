@@ -1,0 +1,15 @@
+.search-bar {
+  @apply text-black mb-5 flex flex-wrap gap-5;
+}
+.search-bar > input {
+  @apply w-full sm:w-1/2;
+}
+
+.search-bar > div {
+  @apply flex gap-5;
+}
+
+.type-btn {
+  @apply text-font-secondary font-extrabold 
+  bg-primary py-2 px-3 rounded-lg;
+}

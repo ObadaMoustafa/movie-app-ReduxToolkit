@@ -12,6 +12,9 @@ export const movieSlice = createSlice({
     addMovies: (state, { payload }) => {
       state.moviesList = payload;
     },
+    deleteMovies: state => {
+      state.moviesList = [];
+    },
     selectAMovie: (state, { payload }) => {
       state.selectedMovie = payload;
     },
@@ -22,11 +25,11 @@ export const movieSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addMovies, selectAMovie, deleteSelectedMovie } =
+export const { addMovies, deleteMovies, selectAMovie, deleteSelectedMovie } =
   movieSlice.actions;
 
 // access states
-export const getAllMovies = state => state.allMovies.moviesList;
-export const getSelectedMovie = state => state.allMovies.selectedMovie;
+export const getAllMovies = state => state.movies.moviesList;
+export const getSelectedMovie = state => state.movies.selectedMovie;
 
 export default movieSlice.reducer;
