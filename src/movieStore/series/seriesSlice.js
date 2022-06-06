@@ -18,14 +18,14 @@ export const seriesSlice = createSlice({
     selectASeries: (state, { payload }) => {
       state.selectedSeries = payload;
     },
-    deleteSelectedMovie: state => {
+    deleteSelectedSeries: state => {
       state.selectedSeries = null;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addSeries, deleteSeries, selectASeries, deleteSelectedMovie } =
+export const { addSeries, deleteSeries, selectASeries, deleteSelectedSeries } =
   seriesSlice.actions;
 
 // access states

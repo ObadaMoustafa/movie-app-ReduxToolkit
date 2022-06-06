@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { addMovies, deleteMovies } from "../../movieStore/movies/movieSlice";
+import { addSeries, deleteSeries } from "../../movieStore/series/seriesSlice";
 import ErrorMsg from "../../common/Error/ErrorMsg";
 import SearchBar from "../../common/SearchBar";
 import Spinner from "../../common/spinner/Spinner";
 import useFetch from "../../hooks/useFetch";
-import { addMovies, deleteMovies } from "../../movieStore/movies/movieSlice";
-import { addSeries, deleteSeries } from "../../movieStore/series/seriesSlice";
 import MovieListing from "./components/MovieListing/MovieListing";
 import "./home.css";
 
