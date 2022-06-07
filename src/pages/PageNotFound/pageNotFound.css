@@ -1,0 +1,3 @@
+.not-found-img {
+  @apply w-full lg:w-4/5 mx-auto;
+}

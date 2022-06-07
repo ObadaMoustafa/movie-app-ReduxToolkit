@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { addMovies, deleteMovies } from "../../movieStore/movies/movieSlice";
-import { addSeries, deleteSeries } from "../../movieStore/series/seriesSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addMovies, getAllMovies } from "../../movieStore/movies/movieSlice";
 import ErrorMsg from "../../common/Error/ErrorMsg";
-import SearchBar from "../../common/SearchBar";
+import SearchBar from "./components/SearchBar/SearchBar";
 import Spinner from "../../common/spinner/Spinner";
 import useFetch from "../../hooks/useFetch";
 import MovieListing from "./components/MovieListing/MovieListing";
@@ -13,26 +12,25 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchType, setSearchType] = useState("movie");
 
+  const moviesList = useSelector(getAllMovies);
+
   const apiKey = process.env.REACT_APP_APIKEY;
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const fullLink = `${baseUrl}?apikey=${apiKey}&s=${
-    searchTerm ? searchTerm : "islam"
+    searchTerm || "islam"
   }&type=${searchType}`;
   const { isLoading, error, performFetch } = useFetch(fullLink);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    performFetch().then(data => {
-      if (searchType === "movie") {
-        dispatch(deleteSeries());
+    if (!searchTerm && moviesList) {
+      // do nothing just got the movies list from the store
+    } else {
+      performFetch().then(data => {
         dispatch(addMovies(data.Search));
-      }
-      if (searchType === "series") {
-        dispatch(deleteMovies());
-        dispatch(addSeries(data.Search));
-      }
-    });
+      });
+    }
   }, [searchTerm, searchType]);
 
   return (
