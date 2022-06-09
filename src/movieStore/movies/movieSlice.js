@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-// localStore has the same structure and it's name is movies
+// localStore has 'movies-list' and 'fav-list'
 const initialState = {
   moviesList: JSON.parse(localStorage.getItem("movies-list")) || null,
   selectedMovie: null,
@@ -29,9 +29,19 @@ export const movieSlice = createSlice({
       localStorage.setItem("fav-list", JSON.stringify(state.favList));
     },
     removeFromFav: (state, { payload }) => {
-      const idIndex = state.favList.findIndex(id => id === payload);
-      state.favList.splice(idIndex, 1);
+      const movieIndex = state.favList.findIndex(
+        movie => movie.imdbID === payload.imdbID
+      );
+      state.favList.splice(movieIndex, 1);
       localStorage.setItem("fav-list", JSON.stringify(state.favList));
+    },
+    deleteFavList: state => {
+      state.favList = [];
+      localStorage.removeItem("fav-list");
+    },
+    clearStore: state => {
+      localStorage.clear();
+      state = initialState;
     },
   },
 });
@@ -44,6 +54,8 @@ export const {
   deleteSelectedMovie,
   addToFav,
   removeFromFav,
+  deleteFavList,
+  clearStore,
 } = movieSlice.actions;
 
 // access states

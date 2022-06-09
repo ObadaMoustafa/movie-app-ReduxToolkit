@@ -6,6 +6,10 @@
   hover:scale-105;
 }
 
+.movie-card > i {
+  @apply text-xl text-white absolute left-2 top-2;
+}
+
 .movie-card img {
   @apply aspect-[2/3] w-full;
 }

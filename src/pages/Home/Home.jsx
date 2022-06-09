@@ -5,11 +5,16 @@ import ErrorMsg from "../../common/Error/ErrorMsg";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Spinner from "../../common/spinner/Spinner";
 import useFetch from "../../hooks/useFetch";
-import MovieListing from "./components/MovieListing/MovieListing";
+import MovieListing from "../../components/MovieListing/MovieListing";
 import "./home.css";
 
 function Home() {
-  const [searchTerm, setSearchTerm] = useState("");
+  // this state allow me to select between movie and series after refreshing the page
+  // because the search is
+  const [searchTerm, setSearchTerm] = useState(
+    () => localStorage.getItem("search-term") || ""
+  );
+
   const [searchType, setSearchType] = useState("movie");
 
   const moviesList = useSelector(getAllMovies);

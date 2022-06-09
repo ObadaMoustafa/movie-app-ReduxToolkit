@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <header>
-      <div>
+      <div className="container">
         <Link to="/">
           <div className="header-logo">Movie App</div>
         </Link>

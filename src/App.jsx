@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import MovieDetail from "./pages/MovieDetail/MovieDetail";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import FavList from "./pages/FavList/FavList";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movie/:imdbId" element={<MovieDetail />} />
+            <Route path="/favList" element={<FavList />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>

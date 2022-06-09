@@ -21,20 +21,22 @@ function MovieDetail() {
   const fullLink = `${baseUrl}?apikey=${apiKey}&i=${imdbId}&plot=full`;
   const selectedMovie = useSelector(getSelectedMovie);
   const favList = useSelector(getFavList);
-  const [starIconClass, setStarIconClass] = useState("regular");
+  const [starIconClass, setStarIconClass] = useState("");
 
   const dispatch = useDispatch();
 
   const { isLoading, error, performFetch } = useFetch(fullLink);
 
   function toggleAddToFavList() {
-    const movieId = selectedMovie.imdbID;
-    const isInFav = favList?.includes(movieId);
-
+    const isInFav = favList.find(
+      movie => movie.imdbID === selectedMovie.imdbID
+    );
     if (isInFav) {
-      dispatch(removeFromFav(movieId));
+      dispatch(removeFromFav(selectedMovie));
+      setStarIconClass("regular");
     } else {
-      dispatch(addToFav(movieId));
+      dispatch(addToFav(selectedMovie));
+      setStarIconClass("solid");
     }
   }
 
@@ -47,13 +49,16 @@ function MovieDetail() {
     };
   }, []);
 
-  // to check
+  // check if the movie in the fav list to give the right star className
   useEffect(() => {
-    const starStyle = favList?.includes(selectedMovie?.imdbID)
-      ? "solid"
-      : "regular";
-    setStarIconClass(starStyle);
-  }, [selectedMovie, favList]);
+    if (selectedMovie && favList) {
+      const isInFav = favList.find(
+        movie => movie.imdbID === selectedMovie.imdbID
+      );
+      const starStyle = isInFav ? "solid" : "regular";
+      setStarIconClass(starStyle);
+    }
+  }, [selectedMovie]);
 
   return (
     <>
@@ -69,7 +74,7 @@ function MovieDetail() {
               </h2>
             </div>
             <div className="poster">
-              <div>
+              <div onClick={toggleAddToFavList}>
                 <i className={`fa-${starIconClass} fa-star`}></i>{" "}
                 {selectedMovie.imdbRating}
               </div>

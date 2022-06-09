@@ -14,3 +14,10 @@ body {
   min-height: calc(100vh - var(--header-h) - var(--footer-h));
   @apply py-5;
 }
+
+.btn {
+  @apply text-font-secondary font-extrabold w-fit
+  bg-primary py-2 px-3 rounded-lg
+  hover:bg-secondary
+  active:bg-primary;
+}

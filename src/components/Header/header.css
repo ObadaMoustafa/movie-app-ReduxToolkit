@@ -4,8 +4,7 @@ header {
 }
 
 header > div {
-  @apply container 
-  flex justify-between items-center
+  @apply flex justify-between items-center
   h-16;
 }
 
