@@ -1,7 +1,7 @@
 # Movie app
 ![app photo](https://github.com/ObadaElSharbatly/movie-app/blob/main/src/images/Laptop-Free-Download-PNG.png)
 ## About
-This is a simple movie app .. and my challange here is not about just creating a movie app but it's about creating a store with actions using `Redux toolkit`
+This is a simple movie app .. and my challange here is not about just creating a movie app but it's about creating a store with actions using `Redux toolkit` and it's a practice for using Tailwindcss
 
 ## Npms and technologies used
 - TailwindCSS
@@ -12,7 +12,7 @@ This is a simple movie app .. and my challange here is not about just creating a
 - responsive app
 - 
 ## Demo
-https://obada-movie-app.herokuapp.com/
+obada-movie-app.netlify.app/
 
 ## Use locally
 - In the root folder you duplicate `.example.env` file and rename it to be `.env` then change the [apiKey](https://www.omdbapi.com/) to be yours
